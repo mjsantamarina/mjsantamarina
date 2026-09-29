@@ -26,17 +26,10 @@ I'm a **Computer Engineering student at [ITBA](https://www.itba.edu.ar/)** in Bu
 
 ## 🤖 How I build with AI agents
 
-```mermaid
-flowchart LR
-  Me([Me: design & approval]) --> O[Orchestrator agent<br/>plans waves, writes briefs]
-  O --> A1[Agent · worktree 1]
-  O --> A2[Agent · worktree 2]
-  A1 --> PR[Pull requests]
-  A2 --> PR
-  PR --> R{Automated reviewer<br/>GitHub Actions}
-  R -- meets policy --> M[(main)]
-  R -- escalates --> Me
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/agents-workflow-dark.svg">
+  <img src="assets/agents-workflow-light.svg" alt="Multi-agent workflow: I design and approve, an orchestrator agent plans waves and writes briefs, agents implement in separate git worktrees and open pull requests, an automated reviewer on GitHub Actions merges what meets the policy and escalates the rest to me." width="100%">
+</picture>
 
 - **Planning in waves:** I designed and use a workflow where an orchestrator agent plans each project stage in waves of independent tasks and writes scoped briefs. Each task is implemented by an agent in its own git worktree and ends in a pull request.
 - **Automated review:** a reviewer on GitHub Actions merges only what meets a review policy (size, protected paths, linked issue) and escalates the rest to me. Design decisions and final approval stay with me.
