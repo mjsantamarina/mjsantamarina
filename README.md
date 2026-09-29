@@ -14,7 +14,7 @@ I'm a **Computer Engineering student at [ITBA](https://www.itba.edu.ar/)** in Bu
 
 - 🧩 I enjoy **backend and distributed systems**, **low-level programming** and building products **end to end**.
 - 🤖 I use AI coding agents (Claude Code, Codex) as part of my development workflow.
-- 🌎 Spanish (native) · English (advanced)
+
 
 ## 🛠️ Tech stack
 
