@@ -13,8 +13,7 @@
 I'm a **Computer Engineering student at [ITBA](https://www.itba.edu.ar/)** in Buenos Aires, Argentina, and I did an exchange semester at **AGH University of Science and Technology** in Kraków, Poland (2026).
 
 - 🧩 I enjoy **backend and distributed systems**, **low-level programming** and building products **end to end**.
-- 🤖 I use AI coding agents (Claude Code, Codex) as part of my development workflow.
-
+- 🤖 I build software with a **multi-agent workflow**: I design and review, AI agents implement in parallel, and an automated reviewer guards `main`.
 
 ## 🛠️ Tech stack
 
@@ -24,6 +23,25 @@ I'm a **Computer Engineering student at [ITBA](https://www.itba.edu.ar/)** in Bu
   <img src="https://skillicons.dev/icons?i=postgres,mongodb,cassandra,docker,git,linux&perline=6" alt="Data and tools"/>
 </p>
 <p align="center"><sub>+ gRPC · Hazelcast · JAX-RS (Jersey) · Neo4j · x86-64 Assembly · QEMU</sub></p>
+
+## 🤖 How I build with AI agents
+
+```mermaid
+flowchart LR
+  Me([Me: design & approval]) --> O[Orchestrator agent<br/>plans waves, writes briefs]
+  O --> A1[Agent · worktree 1]
+  O --> A2[Agent · worktree 2]
+  A1 --> PR[Pull requests]
+  A2 --> PR
+  PR --> R{Automated reviewer<br/>GitHub Actions}
+  R -- meets policy --> M[(main)]
+  R -- escalates --> Me
+```
+
+- **Plan in waves:** tasks that don't touch the same files run in parallel, each agent in its own git worktree.
+- **Scoped briefs:** exact files to read, decisions already made and verifiable "done" criteria, so agents don't waste tokens exploring.
+- **Trust but verify:** I break on purpose what each test claims to protect, to catch tests that pass for the wrong reason.
+- **Humans decide:** nothing reaches GitHub without my approval; the reviewer only merges simple, policy-compliant PRs.
 
 ## ⭐ Featured projects
 
