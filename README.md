@@ -38,10 +38,9 @@ flowchart LR
   R -- escalates --> Me
 ```
 
-- **Plan in waves:** tasks that don't touch the same files run in parallel, each agent in its own git worktree.
-- **Scoped briefs:** exact files to read, decisions already made and verifiable "done" criteria, so agents don't waste tokens exploring.
-- **Trust but verify:** I break on purpose what each test claims to protect, to catch tests that pass for the wrong reason.
-- **Humans decide:** nothing reaches GitHub without my approval; the reviewer only merges simple, policy-compliant PRs.
+- **Planning in waves:** I designed and use a workflow where an orchestrator agent plans each project stage in waves of independent tasks and writes scoped briefs. Each task is implemented by an agent in its own git worktree and ends in a pull request.
+- **Automated review:** a reviewer on GitHub Actions merges only what meets a review policy (size, protected paths, linked issue) and escalates the rest to me. Design decisions and final approval stay with me.
+- **Verification, not trust:** every PR is checked without relying on the agent's report. I deliberately break what each test claims to protect and test on real data, and I track token cost per task to reduce rework.
 
 ## ⭐ Featured projects
 
